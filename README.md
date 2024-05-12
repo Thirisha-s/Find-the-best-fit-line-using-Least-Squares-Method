@@ -1,4 +1,4 @@
-### EXP01 Implementation of Univariate Linear Regression
+# Implementation of Univariate Linear Regression
 ## AIM:
 To implement univariate Linear Regression to fit a straight line using least squares.
 
@@ -16,46 +16,39 @@ To implement univariate Linear Regression to fit a straight line using least squ
 5. Use the slope m and the y -intercept to form the equation of the line.
 6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
 
-## Program and Output:
-
+## Program:
 Program to implement univariate Linear Regression to fit a straight line using least squares.
 
-Developed by: THIRISHA.S
+Developed by:THIRISHA.S
 
-RegisterNumber: 212222230160
+RegisterNumber:21222230160
 
-```python
-import numpy as np
-x=np.array(eval(input()))
-y=np.array(eval(input()))
 ```
-
-<img width="74" alt="image" src="https://github.com/TejaswiniGugananthan/Find-the-best-fit-line-using-Least-Squares-Method/assets/121222763/354fa063-e650-4eb0-9662-aafe6424bf16">
-
-```python
-x_mean=np.mean(x)
-y_mean=np.mean(y)
+import numpy as np
+import matplotlib.pyplot as plt
+X=np.array(eval(input("Enter the input x values in array:")))
+Y=np.array(eval(input("Enter the input y values in array:")))
+X_mean=np.mean(X)
+Y_mean=np.mean(Y)
 num=0
 denom=0
-for i in range(len(x)):
-    num+=(x[i]-x_mean)*(y[i]-y_mean)
-    denom+=(x[i]-x_mean)**2
+for i in range(len(X)):
+    num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+    denom+=(X[i]-X_mean)**2
 m=num/denom
-b=y_mean-m*x_mean
-print("slope: ",m)
-print("y-intercept: ",b)
-y_predict=m*x+b
+print("The slope of the predicted line is : ",m)
+b=Y_mean - m*X_mean
+print("The y-intercept is :",b)
+Y_pred=m*X+b
+print("The 'y' predicted values are :",Y_pred)
+plt.scatter(X,Y,color='blue')
+plt.plot(X,Y_pred,color='green') 
+plt.show()
 ```
 
-<img width="121" alt="image" src="https://github.com/TejaswiniGugananthan/Find-the-best-fit-line-using-Least-Squares-Method/assets/121222763/902bad3d-6574-4fec-b830-89c76b8999d6">
+## Output:
+![image](https://github.com/MounishT/Find-the-best-fit-line-using-Least-Squares-Method/assets/138955798/ad0f8a33-8a8c-496a-8710-6258930fa68d)
 
-```python
-import matplotlib.pyplot as plt
-plt.scatter(x,y)
-plt.plot(x,y_predict,color='blue')
-```
-
-<img width="375" alt="image" src="https://github.com/TejaswiniGugananthan/Find-the-best-fit-line-using-Least-Squares-Method/assets/121222763/bdba84f4-f681-4c91-8a07-4d1c9febea8c">
 
 
 
